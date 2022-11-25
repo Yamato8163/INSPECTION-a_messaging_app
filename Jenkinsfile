@@ -6,7 +6,6 @@ pipeline{
           //   //  git clone 'https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
           //    bat 'git clone https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
           // }
-          stage ('Cloning our git'){
 
 
 
@@ -16,7 +15,7 @@ pipeline{
 
           }
 
-        }
+        
         }
         stage ('Building our image'){
           steps{
