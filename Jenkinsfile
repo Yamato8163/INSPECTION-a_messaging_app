@@ -2,10 +2,21 @@ pipeline{
     agent any
     stages{
         stage ('Cloning our git'){
+          // steps{
+          //   //  git clone 'https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
+          //    bat 'git clone https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
+          // }
+          stage ('Cloning our git'){
+
+
+
           steps{
-             git clone 'https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
-            //  bat 'git clone https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
+
+             git 'https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
+
           }
+
+        }
         }
         stage ('Building our image'){
           steps{
