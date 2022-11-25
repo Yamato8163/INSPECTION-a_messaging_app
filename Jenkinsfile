@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage ('Cloning our git'){
           steps{
-             git 'https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
+             git clone 'https://github.com/Yamato8163/INSPECTION-a_messaging_app.git'
           }
         }
         stage ('Building our image'){
