@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     archivesBaseName = "Sample_Messenger"
     compileSdkVersion 27
@@ -25,7 +26,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.google.firebase:firebase-database:11.0.4'
     implementation 'com.google.firebase:firebase-auth:11.0.4'
-    compile 'com.firebaseui:firebase-ui-database:0.4.4'
+    implementation 'com.firebaseui:firebase-ui-database:0.4.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -37,3 +38,24 @@ dependencies {
 
 
 apply plugin: 'com.google.gms.google-services'
+
+apply plugin: "org.sonarqube"
+sonarqube {
+    properties {
+        property "sonar.projectName", "messageapp"
+        property "sonar.projectKey", "messageapp"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.tests", ["src/test/java"]
+        property "sonar.test.inclusions", "**/*Test*/**"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.sources", "src/main/java"
+        property "sonar.login", "admin"
+        property "sonar.password", "Ar8#Ar8#"
+        property "sonar.token","sqp_b83bde2569f96b3b5bae0b72ee6c9d49c335dc27"
+        property "sonar.exclusions", '**/*Test*/**,' +
+                '*.json,' +
+                '**/*test*/**,' +
+                '**/.gradle/**,' +
+                '**/R.class'
+    }
+}
